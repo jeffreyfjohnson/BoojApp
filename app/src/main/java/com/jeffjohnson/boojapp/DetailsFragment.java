@@ -94,13 +94,16 @@ public class DetailsFragment extends Fragment {
             //if it is, set the image bitmap
             imageView.setImageBitmap(bitmap);
         } else {
-            //otherwise, clear the image, since these views are recycled
-            imageView.setImageDrawable(ContextCompat.getDrawable(getContext(),R.mipmap.ic_launcher));
-            //and then download the image
-            Intent downloadIntent = new Intent(getContext(), DetailPictureDownloadService.class);
-            downloadIntent.setData(pictureUri);
-            downloadIntent.putExtra(DetailPictureDownloadService.EXTRA_PIC_POSITION, position);
-            getContext().startService(downloadIntent);
+            Context context = getContext();
+            if (context != null) {
+                //otherwise, clear the image, since these views are recycled
+                imageView.setImageDrawable(ContextCompat.getDrawable(context, R.mipmap.ic_launcher));
+                //and then download the image
+                Intent downloadIntent = new Intent(getContext(), DetailPictureDownloadService.class);
+                downloadIntent.setData(pictureUri);
+                downloadIntent.putExtra(DetailPictureDownloadService.EXTRA_PIC_POSITION, position);
+                getContext().startService(downloadIntent);
+            }
         }
     }
 }

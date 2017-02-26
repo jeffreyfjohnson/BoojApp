@@ -35,6 +35,7 @@ public class Downloader {
     }
 
     public void getRealtorList(final RealtorListCallback callback){
+        //if we're already downloading the list, ignore subsequent calls
         if (isDownloadingList){
             return;
         }
