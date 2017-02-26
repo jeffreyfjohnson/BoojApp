@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BoojApp</string>
+    <string name="downloading">Downloading…</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="error">Looks like there was an error. Tap anywhere to try again</string>
+    <string name="phone">Phone</string>
+    <string name="name">Name</string>
+    <string name="office">Office</string>
+    <string name="swipe_message">Swipe left/right to see more!</string>
+</resources>
